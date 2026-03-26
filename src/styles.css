@@ -11,8 +11,16 @@
 body {
   margin: 0;
   min-width: 320px;
+  background: radial-gradient(circle at top right, rgba(201, 161, 76, 0.18), transparent 45%),
+    radial-gradient(circle at left 70%, rgba(206, 143, 141, 0.14), transparent 38%), #fffdf7;
 }
 
 * {
   box-sizing: border-box;
+}
+
+@layer components {
+  .ornamental-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gold-300/70 to-transparent;
+  }
 }

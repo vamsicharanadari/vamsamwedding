@@ -13,30 +13,30 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-gold-300/30 bg-ivory-50/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-gold-300/30 bg-ivory-50/85 backdrop-blur-lg">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 md:px-8">
         {/* TODO: Customize these names to your couple's names. */}
-        <NavLink to="/" className="font-heading text-xl font-semibold text-maroon-700 md:text-2xl">
+        <NavLink to="/" className="font-heading text-2xl font-semibold tracking-wide text-maroon-700 md:text-3xl">
           Arjun & Meera
         </NavLink>
 
         <button
           type="button"
-          className="rounded-md border border-maroon-600 px-3 py-1 text-sm font-medium md:hidden"
+          className="rounded-full border border-maroon-600/70 bg-ivory-50 px-4 py-1.5 text-sm font-medium text-maroon-700 shadow-sm md:hidden"
           onClick={() => setIsOpen((value) => !value)}
           aria-label="Toggle menu"
         >
           Menu
         </button>
 
-        <ul className="hidden items-center gap-5 md:flex">
+        <ul className="hidden items-center gap-2 md:flex">
           {navItems.map((item) => (
             <li key={item.to}>
               <NavLink
                 to={item.to}
                 className={({ isActive }) =>
-                  `rounded px-2 py-1 text-sm font-medium transition ${
-                    isActive ? 'bg-maroon-700 text-ivory-50' : 'text-maroon-700 hover:bg-maroon-100'
+                  `rounded-full px-4 py-2 text-sm font-medium transition ${
+                    isActive ? 'bg-maroon-700 text-ivory-50 shadow-card' : 'text-maroon-700 hover:bg-maroon-100/80'
                   }`
                 }
               >
@@ -48,15 +48,15 @@ function Navbar() {
       </nav>
 
       {isOpen && (
-        <ul className="space-y-2 border-t border-gold-300/30 bg-ivory-100 px-4 py-3 md:hidden">
+        <ul className="space-y-2 border-t border-gold-300/30 bg-ivory-100/95 px-4 py-3 md:hidden">
           {navItems.map((item) => (
             <li key={item.to}>
               <NavLink
                 to={item.to}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `block rounded px-3 py-2 text-sm font-medium ${
-                    isActive ? 'bg-maroon-700 text-ivory-50' : 'hover:bg-maroon-100'
+                  `block rounded-xl px-3 py-2.5 text-sm font-medium ${
+                    isActive ? 'bg-maroon-700 text-ivory-50' : 'text-maroon-700 hover:bg-maroon-100'
                   }`
                 }
               >
