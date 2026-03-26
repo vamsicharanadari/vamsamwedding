@@ -1,0 +1,73 @@
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
+const navItems = [
+  { label: 'Home', to: '/' },
+  { label: 'Events', to: '/events' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Travel & Stay', to: '/travel-stay' },
+  { label: 'Contact', to: '/contact' }
+];
+
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-40 border-b border-gold-300/30 bg-ivory-50/95 backdrop-blur">
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 md:px-8">
+        {/* TODO: Customize these names to your couple's names. */}
+        <NavLink to="/" className="font-heading text-xl font-semibold text-maroon-700 md:text-2xl">
+          Arjun & Meera
+        </NavLink>
+
+        <button
+          type="button"
+          className="rounded-md border border-maroon-600 px-3 py-1 text-sm font-medium md:hidden"
+          onClick={() => setIsOpen((value) => !value)}
+          aria-label="Toggle menu"
+        >
+          Menu
+        </button>
+
+        <ul className="hidden items-center gap-5 md:flex">
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                className={({ isActive }) =>
+                  `rounded px-2 py-1 text-sm font-medium transition ${
+                    isActive ? 'bg-maroon-700 text-ivory-50' : 'text-maroon-700 hover:bg-maroon-100'
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {isOpen && (
+        <ul className="space-y-2 border-t border-gold-300/30 bg-ivory-100 px-4 py-3 md:hidden">
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `block rounded px-3 py-2 text-sm font-medium ${
+                    isActive ? 'bg-maroon-700 text-ivory-50' : 'hover:bg-maroon-100'
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      )}
+    </header>
+  );
+}
+
+export default Navbar;
