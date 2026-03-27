@@ -46,46 +46,6 @@ export const events = [
   }
 ];
 
-// TODO: Replace with your real wedding photos grouped by event IDs.
-export const galleryImages = [
-  {
-    id: 1,
-    eventId: 'mehendi',
-    alt: 'Mehendi celebration decor',
-    url: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    id: 2,
-    eventId: 'mehendi',
-    alt: 'Bride hand mehendi closeup',
-    url: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    id: 3,
-    eventId: 'sangeet',
-    alt: 'Sangeet dance stage lights',
-    url: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    id: 4,
-    eventId: 'sangeet',
-    alt: 'Family dance rehearsal',
-    url: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    id: 5,
-    eventId: 'wedding',
-    alt: 'Mandap floral arrangements',
-    url: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80'
-  },
-  {
-    id: 6,
-    eventId: 'wedding',
-    alt: 'Couple portrait in traditional attire',
-    url: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80'
-  }
-];
-
 export const travelInfo = {
   hotels: [
     {

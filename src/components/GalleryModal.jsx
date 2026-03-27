@@ -15,7 +15,8 @@ function GalleryModal({ image, onClose }) {
         >
           Close
         </button>
-        <img src={image.url} alt={image.alt} className="max-h-[85vh] w-full rounded-2xl object-cover shadow-premium" />
+        <img src={image.src} alt={image.alt} className="max-h-[85vh] w-full rounded-2xl object-cover shadow-premium" />
+        {image.caption ? <p className="mt-2 px-2 text-sm text-ivory-50">{image.caption}</p> : null}
       </div>
     </div>
   );
