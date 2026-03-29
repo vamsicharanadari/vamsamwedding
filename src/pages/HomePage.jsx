@@ -38,7 +38,7 @@ function HomePage() {
       <section className="grid gap-4 rounded-3xl border border-gold-300/40 bg-white/90 p-5 shadow-card md:grid-cols-2 md:gap-8 md:p-8">
         <SectionTitle
           title="Welcome"
-          subtitle="We cannot wait to share this beautiful journey and celebrate each ritual with you. Your love and blessings mean the world to us."
+          subtitle={couple.coupleStory}
         />
         <div className="self-center rounded-2xl border border-floral-200/70 bg-gradient-to-br from-ivory-100 via-ivory-50 to-floral-200/40 p-5 text-sm leading-relaxed text-maroon-800">
           <p>
